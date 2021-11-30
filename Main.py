@@ -79,12 +79,14 @@ class Iletisim(db.Model):
     uyeID= db.Column(db.Integer,unique=True,nullable=False)    
     Adres= db.Column(db.String(200),nullable=False) 
     E_Mail= db.Column(db.String(30),primary_key=True,unique=True,nullable=False)  
-    TelNo= db.Column(db.Integer,nullable=False)          
-    def __init__(self, uyeID,Adres,E_Mail,TelNo):
+    TelNo= db.Column(db.Integer,nullable=False) 
+    calisanID= db.Column(db.Integer,unique=True,nullable=False) 
+    def __init__(self, uyeID,Adres,E_Mail,TelNo,calisanID):
         self.uyeID=uyeID       
         self.Adres=Adres
         self.E_Mail=E_Mail 
         self.TelNo=TelNo
+        self.calisanID=calisanID
 class Message(db.Model):
     __tablename__ = 'Message'          
     MesageID= db.Column(db.Integer,primary_key=True,unique=True,nullable=False)  
